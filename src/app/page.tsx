@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section style={{ 
+      <section style={{
         position: "relative",
         minHeight: "80vh",
         display: "flex",
@@ -21,14 +21,14 @@ export default function Home() {
           background: "linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.5))",
           zIndex: 1
         }}></div>
-        
+
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: "700px" }} className="animate-fade-in-up">
             <h1 style={{ fontSize: "3.5rem", marginBottom: "1.5rem", color: "var(--color-white)", lineHeight: 1.1 }}>
-              Cam İşleme ve Doğramada <span style={{ color: "var(--color-primary)" }}>Mükemmellik</span>
+              İnşaat, Cam İşleme ve Doğramada <span style={{ color: "var(--color-primary)" }}>Mükemmellik</span>
             </h1>
             <p style={{ fontSize: "1.25rem", marginBottom: "2rem", color: "var(--color-border)", opacity: 0.9 }}>
-              Yılların tecrübesiyle estetik ve dayanıklılığı bir araya getiriyoruz. Projelerinize özel yenilikçi çözümler 3S CAM farkıyla sizlerle.
+              Yılların tecrübesiyle estetik ve dayanıklılığı bir araya getiriyoruz. Projelerinize özel yenilikçi çözümleri 3S CAM farkıyla sizlere sunuyoruz.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/projeler" className="btn btn-primary" style={{ padding: "1rem 2rem", fontSize: "1.1rem" }}>Projelerimizi İnceleyin</Link>
@@ -47,16 +47,16 @@ export default function Home() {
               İhtiyacınıza uygun kalıcı ve estetik çözümler üretiyoruz.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3">
             {[
-              { title: "Cam İşleme", desc: "Temperli, lamine, jaluzili ve dekoratif cam çözümleriyle mekanlarınıza değer katıyoruz." },
+              { title: "Cam İşleme", desc: "Temperli, ısıcam, lamine, jaluzili ve dekoratif cam çözümleriyle mekanlarınıza değer katıyoruz." },
               { title: "Alüminyum & PVC Doğrama", desc: "Isı yalıtımlı, dayanıklı ve şık tasarımlı doğrama sistemleriyle konforu garantiliyoruz." },
               { title: "İnşaat İşleri", desc: "Temelden çatıya, tüm mimari ve yapısal gereksinimlerinizi anahtar teslim yönetiyoruz." },
             ].map((service, idx) => (
               <div key={idx} className="card text-center" style={{ padding: "2rem" }}>
-                <div style={{ 
-                  width: "60px", height: "60px", margin: "0 auto 1.5rem", 
+                <div style={{
+                  width: "60px", height: "60px", margin: "0 auto 1.5rem",
                   backgroundColor: "rgba(142, 28, 42, 0.1)", borderRadius: "50%",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   color: "var(--color-primary)", fontWeight: "bold", fontSize: "1.5rem"

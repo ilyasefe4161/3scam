@@ -16,12 +16,12 @@ export default function ContactPage() {
     const result = await submitContactMessage(formData);
 
     if (result.error) {
-       setStatus("error");
-       setMessage(result.error);
+      setStatus("error");
+      setMessage(result.error);
     } else {
-       setStatus("success");
-       setMessage("Mesajınız başarıyla iletildi. En kısa sürede dönüş yapacağız.");
-       (e.target as HTMLFormElement).reset();
+      setStatus("success");
+      setMessage("Mesajınız başarıyla iletildi. En kısa sürede dönüş yapacağız.");
+      (e.target as HTMLFormElement).reset();
     }
   }
 
@@ -38,16 +38,22 @@ export default function ContactPage() {
         <div>
           <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--color-secondary)" }}>Bize Ulaşın</h2>
           <div className="card">
-            <p style={{ marginBottom: "1rem" }}><strong>📍 Adres:</strong> Organize Sanayi Bölgesi, Merkez / Türkiye</p>
-            <p style={{ marginBottom: "1rem" }}><strong>📞 Telefon:</strong> +90 555 123 4567</p>
+            <p style={{ marginBottom: "1rem" }}><strong>📍 Adres:</strong> Rahmiye Mahallesi, İzmit Cad. No: 14 Kartepe / Kocaeli</p>
+            <p style={{ marginBottom: "1rem" }}><strong>📞 Telefon:</strong> +90 262 325 22 17</p>
             <p style={{ marginBottom: "1rem" }}><strong>✉️ E-posta:</strong> info@3scam.com.tr</p>
-            
-            <div style={{ marginTop: "2rem", height: "300px", backgroundColor: "var(--color-border)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-               <span style={{ color: "var(--color-text-muted)" }}>[Harita Embed Alanı]</span>
+
+            <div style={{ marginTop: "2rem", height: "300px", overflow: "hidden", borderRadius: "8px", border: "1px solid var(--color-border)" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d756.0707516564967!2d30.01614426962543!3d40.711786014769906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQyJzQyLjQiTiAzMMKwMDEnMDAuNCJF!5e0!3m2!1str!2str!4v1776867726829!5m2!1str!2str"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
-
         <div>
           <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--color-secondary)" }}>Mesaj Gönderin</h2>
           <div className="card">
@@ -70,7 +76,7 @@ export default function ContactPage() {
               </div>
 
               {message && (
-                <div style={{ 
+                <div style={{
                   padding: "1rem", marginBottom: "1rem", borderRadius: "4px",
                   backgroundColor: status === "success" ? "#d1fae5" : "#fee2e2",
                   color: status === "success" ? "#065f46" : "#b91c1c"

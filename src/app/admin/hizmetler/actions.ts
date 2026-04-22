@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import fs from "fs/promises";
 import path from "path";
+import { stringToSlug } from "@/lib/utils";
 
 async function saveFile(file: File | null): Promise<string | null> {
   if (!file || file.size === 0) return null;
@@ -31,9 +32,10 @@ export async function addService(formData: FormData) {
   if (!title || !description) return { error: "Başlık ve özet zorunludur." };
 
   const imageUrl = await saveFile(image);
+  const slug = stringToSlug(title);
 
   await prisma.service.create({
-    data: { title, description, content, imageUrl }
+    data: { title, slug, description, content, imageUrl }
   });
 
   revalidatePath("/admin/hizmetler");
@@ -58,7 +60,8 @@ export async function editService(formData: FormData) {
   if (!id || !title || !description) return { error: "Zorunlu alanlar eksik." };
 
   const newImageUrl = await saveFile(image);
-  const dataToUpdate: any = { title, description, content };
+  const slug = stringToSlug(title);
+  const dataToUpdate: any = { title, slug, description, content };
   if (newImageUrl) {
     dataToUpdate.imageUrl = newImageUrl;
   }

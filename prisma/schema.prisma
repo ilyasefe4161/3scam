@@ -38,6 +38,7 @@ model Message {
 model Service {
   id          String   @id @default(uuid())
   title       String
+  slug        String   @unique
   description String
   icon        String?
   imageUrl    String?
